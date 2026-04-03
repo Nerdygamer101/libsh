@@ -1,0 +1,32 @@
+# Allow shellcheck to read scripts referenced by "source" or "."
+external-sources=true
+
+# Allow the use of "local" in functions
+# Technically not POSIX, but it's available in enough shells that I'm ok with it
+disable=SC3043
+
+# Tell shellcheck where to look for dependencies so it doesn't complain
+source-path=lib
+
+
+# Optional directives
+
+# This is a consistency reminder more than anything
+enable=require-variable-braces
+
+# Make sure we're using set -e correctly
+enable=check-set-e-suppressed
+
+# Always try to avoid masked return values, can save pain in the long run
+enable=check-extra-masked-returns
+
+# Improves clarity when using test braces
+enable=avoid-nullary-conditions
+enable=avoid-negated-conditions
+
+# Reminder to add default cases, can save pain in the long run
+enable=add-default-case
+
+# Stick with shell builtins when possible
+enable=useless-use-of-cat
+enable=deprecate-which
